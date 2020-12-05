@@ -48,7 +48,7 @@ class _CadastroState extends State<Cadastro> {
               child: SizedBox.expand(
                 child: FlatButton(
                   onPressed: () {
-                        (){};
+                      Navigator.pushNamed(context, "/cadastro1");
                   },
                   child: Text(
                     "Sincronizar conta(s)",

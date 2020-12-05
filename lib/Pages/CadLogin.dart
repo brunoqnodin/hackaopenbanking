@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:openbanking/pages/Home.dart';
 import 'package:openbanking/Pages/ui/Usuario.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:openbanking/Pages/ui/clipper.dart';
@@ -17,22 +16,10 @@ class _CadLoginState extends State<CadLogin> {
   TextEditingController _controllerNome = TextEditingController();
   TextEditingController _controllerEmail = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
-  TextEditingController _controllerCpf = TextEditingController();
-  TextEditingController _controllerEndereco = TextEditingController();
-  TextEditingController _controllerCidade = TextEditingController();
-  TextEditingController _controllerEstado = TextEditingController();
-  TextEditingController _controllerCep = TextEditingController();
-  TextEditingController _controllerNascimento = TextEditingController();
   String _mensagemErro = "";
 
   FocusNode _nodeEmail = FocusNode();
   FocusNode _nodeNome = FocusNode();
-  FocusNode _nodeCpf = FocusNode();
-  FocusNode _nodeNascimento = FocusNode();
-  FocusNode _nodeEndereco = FocusNode();
-  FocusNode _nodeCidade = FocusNode();
-  FocusNode _nodeEstado = FocusNode();
-  FocusNode _nodeCep = FocusNode();
   FocusNode _nodeSenha = FocusNode();
 
   _logoffUsuario() async {

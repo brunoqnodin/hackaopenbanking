@@ -6,6 +6,7 @@ import 'package:openbanking/Pages/Ajuda.dart';
 import 'package:openbanking/Pages/Cadastro.dart';
 import 'package:openbanking/Pages/Mapa.dart';
 import 'package:openbanking/Pages/Solicita.dart';
+import 'package:openbanking/Pages/ui/clipper.dart';
 import 'package:openbanking/Pages/ui/draweropen.dart';
 
 class Home extends StatefulWidget {
@@ -52,16 +53,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> paginas = [
-      Ajuda(),
       Cadastro(),
+      Ajuda(),
       Mapa(),
       Solicita()
     ];
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white70),
+        elevation: 0,
         title: Text("OpenBanking"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color(0xFF2A5C5B),
         centerTitle: true,
         actions: <Widget>[
           PopupMenuButton<String>(
@@ -77,12 +79,25 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: paginas[_indiceAtual],
+      body: Stack(
+        children: [
+          ClipPath(
+            clipper: WaveClipperTwo(),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF2A5C5B),
+              ),
+              height: 60,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            child: paginas[_indiceAtual],
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color(0xFF2A5C5B),
         currentIndex: _indiceAtual,
         onTap: (indice){
           setState(() {
@@ -94,12 +109,12 @@ class _HomeState extends State<Home> {
         unselectedItemColor: Colors.black54,
         items: [
           BottomNavigationBarItem(
-              label: "Cadastro",
+              label: "Meus Dados",
               icon: Icon(Icons.home)
           ),
           BottomNavigationBarItem(
-              label: "Postos",
-              icon: Icon(Icons.map)
+              label: "Propostas",
+              icon: Icon(Icons.insert_drive_file)
           ),
           BottomNavigationBarItem(
               label: "Solicitações",
@@ -112,7 +127,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       drawer: Theme(
-        data: Theme.of(context).copyWith(canvasColor: Colors.blueGrey),
+        data: Theme.of(context).copyWith(canvasColor: Color(0xFF2A5C5B)),
         child: OpenBankingDrawer(),
       ),
     );
