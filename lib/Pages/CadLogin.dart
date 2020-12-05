@@ -86,264 +86,266 @@ class _CadLoginState extends State<CadLogin> {
         backgroundColor: Color(0xFF2A5C5B),
         elevation: 0,
       ),
-      body: Stack(
-        children: [
-          ClipPath(
-            clipper: WaveClipperTwo(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF2A5C5B),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            ClipPath(
+              clipper: WaveClipperTwo(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF2A5C5B),
+                ),
+                height: 150,
               ),
-              height: 150,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(32),
-            width: double.infinity,
-            child: Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 70,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Cadastro",
-                          style:
-                              TextStyle(fontSize: 20, color: Colors.blueGrey),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: TextFormField(
-                        cursorColor: Colors.deepOrange,
-                        controller: _controllerNome,
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.next,
-                        focusNode: _nodeNome,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.account_circle,
-                            color: Colors.blue,
+            Container(
+              padding: EdgeInsets.only(top: 80, left: 32, right: 32, bottom: 32),
+              width: double.infinity,
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 70,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Cadastro",
+                            style:
+                            TextStyle(fontSize: 20, color: Colors.blueGrey),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: TextFormField(
+                          cursorColor: Colors.deepOrange,
+                          controller: _controllerNome,
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.next,
+                          focusNode: _nodeNome,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            prefixIcon: Icon(
+                              Icons.account_circle,
+                              color: Colors.blue,
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.white, width: 0),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
+                            labelText: "Usuário",
+                            labelStyle:
+                            TextStyle(fontSize: 20, color: Colors.blueGrey),
                           ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 0),
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF2A5C5B),
                           ),
-                          labelText: "Usuário",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.blueGrey),
-                        ),
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xFF2A5C5B),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: TextFormField(
-                        cursorColor: Colors.deepOrange,
-                        controller: _controllerEmail,
-                        keyboardType: TextInputType.emailAddress,
-                        textInputAction: TextInputAction.next,
-                        autofocus: true,
-                        focusNode: _nodeEmail,
-                        onFieldSubmitted: (term) {
-                          FocusScope.of(context).requestFocus(_nodeNome);
-                        },
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: Colors.blue,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 0),
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                          ),
-                          labelText: "E-mail",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.blueGrey),
-                        ),
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xFF2A5C5B),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: TextFormField(
-                        cursorColor: Colors.deepOrange,
-                        controller: _controllerSenha,
-                        keyboardType: TextInputType.text,
-                        obscureText: true,
-                        textInputAction: TextInputAction.done,
-                        focusNode: _nodeSenha,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            color: Colors.blue,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 0),
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                          ),
-                          labelText: "Senha",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.blueGrey),
-                        ),
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xFF2A5C5B),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 10),
-                      child: CheckboxListTile(
-                        title: Text(
-                            "Ao clicar em Cadastrar, você concorda com nossos Termos, Condições e Políticas de Dados"),
-                        value: _contrato,
-                        onChanged: (_contratonovo) {
-                          setState(() {
-                            _contrato = _contratonovo;
-                          });
-                        },
-                        controlAffinity: ListTileControlAffinity.leading,
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 200,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xFF22B995),
-                      ),
-                      child: SizedBox.expand(
-                        child: FlatButton(
-                          onPressed: () {
-                            _validarCampos();
-                            return showDialog(
-                                context: context,
-                                barrierDismissible: true,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title:
-                                        Text("Dados Cadastrados com Sucesso!"),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text("OK"),
-                                      ),
-                                    ],
-                                  );
-                                });
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: TextFormField(
+                          cursorColor: Colors.deepOrange,
+                          controller: _controllerEmail,
+                          keyboardType: TextInputType.emailAddress,
+                          textInputAction: TextInputAction.next,
+                          autofocus: true,
+                          focusNode: _nodeEmail,
+                          onFieldSubmitted: (term) {
+                            FocusScope.of(context).requestFocus(_nodeNome);
                           },
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.blue,
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.white, width: 0),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
+                            labelText: "E-mail",
+                            labelStyle:
+                            TextStyle(fontSize: 20, color: Colors.blueGrey),
+                          ),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF2A5C5B),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: TextFormField(
+                          cursorColor: Colors.deepOrange,
+                          controller: _controllerSenha,
+                          keyboardType: TextInputType.text,
+                          obscureText: true,
+                          textInputAction: TextInputAction.done,
+                          focusNode: _nodeSenha,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              color: Colors.blue,
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.white, width: 0),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
+                            labelText: "Senha",
+                            labelStyle:
+                            TextStyle(fontSize: 20, color: Colors.blueGrey),
+                          ),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF2A5C5B),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: CheckboxListTile(
+                          title: Text(
+                              "Ao clicar em Cadastrar, você concorda com nossos Termos, Condições e Políticas de Dados"),
+                          value: _contrato,
+                          onChanged: (_contratonovo) {
+                            setState(() {
+                              _contrato = _contratonovo;
+                            });
+                          },
+                          controlAffinity: ListTileControlAffinity.leading,
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 200,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color(0xFF22B995),
+                        ),
+                        child: SizedBox.expand(
+                          child: FlatButton(
+                            onPressed: () {
+                              _validarCampos();
+                              return showDialog(
+                                  context: context,
+                                  barrierDismissible: true,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title:
+                                      Text("Dados Cadastrados com Sucesso!"),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text("OK"),
+                                        ),
+                                      ],
+                                    );
+                                  });
+                            },
+                            child: Text(
+                              "Cadastrar",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                  fontFamily: "Big Shoulders Display",
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 15, bottom: 10),
+                        child: Center(
                           child: Text(
-                            "Cadastrar",
-                            style: TextStyle(
-                                fontSize: 25,
-                                color: Colors.white,
-                                fontFamily: "Big Shoulders Display",
-                                fontWeight: FontWeight.bold),
+                            " - OU SE PREFERIR - ",
+                            style: TextStyle(color: Colors.grey),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 15, bottom: 10),
-                      child: Center(
-                        child: Text(
-                          " - OU SE PREFERIR - ",
-                          style: TextStyle(color: Colors.grey),
+                      Container(
+                        height: 60,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color(0xFFA0A4AB),
                         ),
-                      ),
-                    ),
-                    Container(
-                      height: 60,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xFFA0A4AB),
-                      ),
-                      child: SizedBox.expand(
-                        child: FlatButton(
-                          onPressed: () {
-                            _validarCampos();
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image(
-                                image: AssetImage("assets/google_logo.png"),
-                                height: 25,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20),
-                                child: Text(
-                                  "Entrar com o Google",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                        child: SizedBox.expand(
+                          child: FlatButton(
+                            onPressed: () {
+                              _validarCampos();
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image(
+                                  image: AssetImage("assets/google_logo.png"),
+                                  height: 25,
                                 ),
-                              )
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20),
+                                  child: Text(
+                                    "Entrar com o Google",
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Center(
-                        child: FlatButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text(
-                            "Tem uma conta? Entre aqui",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.blueGrey),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              "Tem uma conta? Entre aqui",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.blueGrey),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Text(
-                      _mensagemErro,
-                      style: TextStyle(color: Colors.red, fontSize: 20),
-                    ),
-                  ],
+                      Text(
+                        _mensagemErro,
+                        style: TextStyle(color: Colors.red, fontSize: 20),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

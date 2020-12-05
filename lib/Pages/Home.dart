@@ -79,22 +79,24 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          ClipPath(
-            clipper: WaveClipperTwo(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF2A5C5B),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            ClipPath(
+              clipper: WaveClipperTwo(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF2A5C5B),
+                ),
+                height: 60,
               ),
-              height: 60,
             ),
-          ),
-          Container(
-            width: double.infinity,
-            child: paginas[_indiceAtual],
-          ),
-        ],
+            Container(
+              width: double.infinity,
+              child: paginas[_indiceAtual],
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF2A5C5B),

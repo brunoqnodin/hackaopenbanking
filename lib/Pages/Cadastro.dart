@@ -11,7 +11,7 @@ class _CadastroState extends State<Cadastro> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 120),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

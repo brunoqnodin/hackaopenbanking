@@ -71,189 +71,191 @@ class _LoginPageState extends State<LoginPage> {
         elevation: 0,
       ),
       backgroundColor: Color(0xFFF8F9FA),
-      body: Stack(
-        children: [
-          ClipPath(
-            clipper: WaveClipperTwo(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF2A5C5B),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            ClipPath(
+              clipper: WaveClipperTwo(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF2A5C5B),
+                ),
+                height: 150,
               ),
-              height: 150,
             ),
-          ),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(32),
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 120,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Text("Faça seu login", style: TextStyle(fontSize: 20, color: Colors.blueGrey),)
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  TextFormField(
-                    controller: controllerEmail,
-                    keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(
-                      color: Colors.blueGrey,
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(32),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 120,
                     ),
-                    decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      filled: true,
-                      prefixIcon: Icon(Icons.account_circle, color: Colors.blue,),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white, width: 0),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      labelText: "Usuário",
-                      labelStyle: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueGrey
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text("Faça seu login", style: TextStyle(fontSize: 20, color: Colors.blueGrey),)
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    controller: controllerSenha,
-                    keyboardType: TextInputType.text,
-                    obscureText: true,
-                    style: TextStyle(
-                      color: Colors.blueGrey,
+                    SizedBox(
+                      height: 40,
                     ),
-                    decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      filled: true,
-                      prefixIcon: Icon(Icons.lock, color: Colors.blue,),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white, width: 0),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      labelText: "Senha",
-                      labelStyle: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueGrey
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  Container(
-                    height: 60,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFF22B995),
-                    ),
-                    child: SizedBox.expand(
-                      child: FlatButton(
-                        onPressed: () {
-                          _validarCampos();
-                        },
-                        child: Text(
-                          "Entrar",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/reset");
-                    },
-                    child: Text(
-                      "Esqueci minha senha",
-                      textAlign: TextAlign.right,
+                    TextFormField(
+                      controller: controllerEmail,
+                      keyboardType: TextInputType.emailAddress,
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black45),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Center(
-                      child: Text(" - OU SE PREFERIR - ", style: TextStyle(color: Colors.grey),),
-                    ),
-                  ),
-                  Container(
-                    height: 60,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFA0A4AB),
-                    ),
-                    child: SizedBox.expand(
-                      child: FlatButton(
-                        onPressed: () {
-                          _validarCampos();
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(image: AssetImage("assets/google_logo.png"), height: 25,),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Text(
-                                "Entrar com o Google",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            )
-                          ],
+                        color: Colors.blueGrey,
+                      ),
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(Icons.account_circle, color: Colors.blue,),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white, width: 0),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        labelText: "Usuário",
+                        labelStyle: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blueGrey
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Center(
-                      child: FlatButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/cadLogin");
-                        },
-                        child: Text(
-                          "Ainda não tem conta? Cadastre-se",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.blueGrey),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      controller: controllerSenha,
+                      keyboardType: TextInputType.text,
+                      obscureText: true,
+                      style: TextStyle(
+                        color: Colors.blueGrey,
+                      ),
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(Icons.lock, color: Colors.blue,),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white, width: 0),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        labelText: "Senha",
+                        labelStyle: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blueGrey
                         ),
                       ),
                     ),
-                  ),
-                  Center(
-                    child: Text(
-                      mensagemErro,
-                      style: TextStyle(color: Colors.red),
+                    SizedBox(
+                      height: 60,
                     ),
-                  ),
-                ],
+                    Container(
+                      height: 60,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Color(0xFF22B995),
+                      ),
+                      child: SizedBox.expand(
+                        child: FlatButton(
+                          onPressed: () {
+                            _validarCampos();
+                          },
+                          child: Text(
+                            "Entrar",
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/reset");
+                      },
+                      child: Text(
+                        "Esqueci minha senha",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black45),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20, bottom: 20),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Center(
+                        child: Text(" - OU SE PREFERIR - ", style: TextStyle(color: Colors.grey),),
+                      ),
+                    ),
+                    Container(
+                      height: 60,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Color(0xFFA0A4AB),
+                      ),
+                      child: SizedBox.expand(
+                        child: FlatButton(
+                          onPressed: () {
+                            _validarCampos();
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image(image: AssetImage("assets/google_logo.png"), height: 25,),
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "Entrar com o Google",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Center(
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/cadLogin");
+                          },
+                          child: Text(
+                            "Ainda não tem conta? Cadastre-se",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.blueGrey),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        mensagemErro,
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
