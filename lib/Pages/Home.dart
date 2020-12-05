@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
     ];
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color(0xFF20232D)),
+        iconTheme: IconThemeData(color: Colors.white70),
         title: Text("OpenBanking"),
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
@@ -90,7 +90,8 @@ class _HomeState extends State<Home> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        fixedColor: Colors.white70,
+        fixedColor: Colors.white,
+        unselectedItemColor: Colors.black54,
         items: [
           BottomNavigationBarItem(
               label: "Cadastro",
@@ -110,7 +111,10 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      drawer: OpenBankingDrawer(),
+      drawer: Theme(
+        data: Theme.of(context).copyWith(canvasColor: Colors.blueGrey),
+        child: OpenBankingDrawer(),
+      ),
     );
   }
 }
