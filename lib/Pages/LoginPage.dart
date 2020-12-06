@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: BoxDecoration(
                   color: Color(0xFF2A5C5B),
                 ),
-                height: 150,
+                height: 60,
               ),
             ),
             Container(
@@ -89,8 +89,12 @@ class _LoginPageState extends State<LoginPage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(top: 50),
+                      child: Image.asset("assets/logoopenminer.png"),
+                    ),
                     SizedBox(
-                      height: 120,
+                      height: 50,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -149,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 60,
+                      height: 30,
                     ),
                     Container(
                       height: 60,
@@ -186,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 20, bottom: 20),
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                     ),
                     Padding(
                       padding: EdgeInsets.only(bottom: 10),

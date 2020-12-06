@@ -525,7 +525,6 @@ class _Cadastro1State extends State<Cadastro1> {
                     child: SizedBox.expand(
                       child: FlatButton(
                         onPressed: () {
-
                           return showDialog(
                               context: context,
                               barrierDismissible: true,
@@ -545,7 +544,7 @@ class _Cadastro1State extends State<Cadastro1> {
                               });
                         },
                         child: Text(
-                          "Cadastrar",
+                          "Finalizar",
                           style: TextStyle(
                               fontSize: 25,
                               color: Colors.white,
@@ -553,6 +552,9 @@ class _Cadastro1State extends State<Cadastro1> {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 60,
                   ),
                 ],
               ),

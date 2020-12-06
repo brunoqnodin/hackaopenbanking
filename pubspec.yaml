@@ -38,6 +38,12 @@ dependencies:
   mask_text_input_formatter: ^1.1.0
   http: ^0.12.0+4
   google_maps_flutter: ^0.5.28+1
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  android: true
+  image_path_ios: "assets/icon.png"
+  image_path_android: "assets/icon.png"
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +67,9 @@ flutter:
   assets:
     - assets/google_logo.png
     - assets/home.png
-
+    - assets/openminer.png
+    - assets/icon.png
+    - assets/logoopenminer.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
