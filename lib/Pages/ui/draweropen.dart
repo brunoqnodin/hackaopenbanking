@@ -26,6 +26,12 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
 
   }
 
+  _logoffUsuario()async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await auth.signOut();
+    Navigator.pushReplacementNamed(context, "/login");
+  }
+
   @override
   void initState(){
     super.initState();
@@ -43,24 +49,14 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/perfil");
-                      },
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.grey,
-                        backgroundImage: _urlImagemRecuperada != null ? NetworkImage("${_urlImagemRecuperada}") : null,
-                      ),
-                    ),
+                    Image.asset("assets/logoopenminer.png"),
                     SizedBox(
                       height: 20,
                     ),
-                    Image.asset("images/logochapada.png"),
                   ],
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0xFFEE7700),
+                  color: Color(0xFFF8F9FA),
                 ),
               ),
             ),
@@ -71,72 +67,74 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               padding: EdgeInsets.only(left: 5),
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
-                textColor: Color(0xFFEE7700),
+                textColor: Colors.white70,
+                onPressed: (){},
+                icon: Icon(Icons.insert_drive_file),
+                label: Text("      Propostas"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child:  Divider(
+                color: Colors.white70,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 5),
+              alignment: Alignment.centerLeft,
+              child: FlatButton.icon(
+                textColor: Colors.white70,
                 onPressed: (){},
                 icon: Icon(Icons.home),
-                label: Text("      Enviar Solicitação"),
+                label: Text("      Minha Empresa"),
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child:  Divider(
-                color: Color(0xFFEE7700),
+                color: Colors.white70,
               ),
             ),
             Container(
               padding: EdgeInsets.only(left: 5),
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
-                textColor: Color(0xFFEE7700),
-                onPressed: (){},
-                icon: Icon(Icons.map),
-                label: Text("      Postos Autorizados"),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child:  Divider(
-                color: Color(0xFFEE7700),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 5),
-              alignment: Alignment.centerLeft,
-              child: FlatButton.icon(
-                textColor: Color(0xFFEE7700),
+                textColor: Colors.white70,
                 onPressed: (){},
                 icon: Icon(Icons.insert_chart),
-                label: Text("      Acompanhar Solicitações"),
+                label: Text("      Extratos Unificados"),
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child:  Divider(
-                color: Color(0xFFEE7700),
+                color: Colors.white70,
               ),
             ),
             Container(
               padding: EdgeInsets.only(left: 5),
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
-                textColor: Color(0xFFEE7700),
+                textColor: Colors.white70,
                 onPressed: (){},
-                icon: Icon(Icons.help),
-                label: Text("      Ajuda"),
+                icon: Icon(Icons.account_circle),
+                label: Text("      Meus Dados"),
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child:  Divider(
-                color: Color(0xFFEE7700),
+                color: Colors.white70,
               ),
             ),
             Container(
               padding: EdgeInsets.only(left: 5),
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
-                textColor: Color(0xFFEE7700),
-                onPressed: (){},
+                textColor: Colors.white70,
+                onPressed: (){
+                  _logoffUsuario();
+                },
                 icon: Icon(Icons.exit_to_app),
                 label: Text("      Sair"),
               ),

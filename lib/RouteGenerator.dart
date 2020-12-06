@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:openbanking/Contas.dart';
 import 'package:openbanking/Pages/Cadastro.dart';
 import 'package:openbanking/Pages/Cadastro1.dart';
+import 'package:openbanking/Pages/Contas1.dart';
 import 'package:openbanking/Pages/LoginPage.dart';
 import 'package:openbanking/Pages/CadLogin.dart';
 import 'package:openbanking/Pages/ResetPassword.dart';
@@ -24,6 +26,10 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => ResetPassword());
       case "/cadastro1":
         return MaterialPageRoute(builder: (_) => Cadastro1());
+      case "/contas":
+        return MaterialPageRoute(builder: (_) => Contas());
+      case "/contas1":
+        return MaterialPageRoute(builder: (_) => Contas1());
       case "/home":
         return MaterialPageRoute(builder: (_) => Home());
       default: _erroRota();

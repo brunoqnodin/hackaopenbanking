@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:openbanking/Pages/Ajuda.dart';
+import 'package:openbanking/Contas.dart';
 import 'package:openbanking/Pages/Cadastro.dart';
-import 'package:openbanking/Pages/Mapa.dart';
+import 'package:openbanking/Pages/Propostas.dart';
 import 'package:openbanking/Pages/Solicita.dart';
 import 'package:openbanking/Pages/ui/clipper.dart';
 import 'package:openbanking/Pages/ui/draweropen.dart';
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   int _indiceAtual = 0;
   String _idUsuarioLogado;
   String _urlImagemRecuperada;
-  List<String> itensMenu = ["Ver Perfil", "Sair"];
+  List<String> itensMenu = ["Sair"];
 
   _recuperarDadosUsuario()async{
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -36,9 +36,6 @@ class _HomeState extends State<Home> {
 
   _escolhaMenuItem(String itemEscolhido){
     switch (itemEscolhido){
-      case "Ver Perfil":
-        Navigator.pushNamed(context, "/perfil");
-        break;
       case "Sair":
         _logoffUsuario();
         break;
@@ -53,16 +50,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> paginas = [
+      Propostas(),
       Cadastro(),
-      Ajuda(),
-      Mapa(),
-      Solicita()
+      Solicita(),
+      Contas()
     ];
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white70),
         elevation: 0,
-        title: Text("OpenBanking"),
+        title: Image.asset("assets/logoopenminer2.png", height: 40,),
         backgroundColor: Color(0xFF2A5C5B),
         centerTitle: true,
         actions: <Widget>[
@@ -111,20 +108,20 @@ class _HomeState extends State<Home> {
         unselectedItemColor: Colors.black54,
         items: [
           BottomNavigationBarItem(
-              label: "Meus Dados",
-              icon: Icon(Icons.home)
-          ),
-          BottomNavigationBarItem(
               label: "Propostas",
               icon: Icon(Icons.insert_drive_file)
           ),
           BottomNavigationBarItem(
-              label: "Solicitações",
-              icon: Icon(Icons.reorder)
+              label: "Minha Empresa",
+              icon: Icon(Icons.home)
           ),
           BottomNavigationBarItem(
-             label: "Ajuda",
-              icon: Icon(Icons.help)
+              label: "Extratos",
+              icon: Icon(Icons.insert_chart)
+          ),
+          BottomNavigationBarItem(
+             label: "Meus Dados",
+              icon: Icon(Icons.account_circle)
           ),
         ],
       ),

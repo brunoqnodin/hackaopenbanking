@@ -95,7 +95,7 @@ class _CadLoginState extends State<CadLogin> {
                 decoration: BoxDecoration(
                   color: Color(0xFF2A5C5B),
                 ),
-                height: 150,
+                height: 80,
               ),
             ),
             Container(
@@ -106,8 +106,12 @@ class _CadLoginState extends State<CadLogin> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Image.asset("assets/logoopenminer.png", height: 80,),
+                      ),
                       SizedBox(
-                        height: 70,
+                        height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -267,7 +271,6 @@ class _CadLoginState extends State<CadLogin> {
                               style: TextStyle(
                                   fontSize: 25,
                                   color: Colors.white,
-                                  fontFamily: "Big Shoulders Display",
                                   fontWeight: FontWeight.bold),
                             ),
                           ),

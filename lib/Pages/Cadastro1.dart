@@ -16,7 +16,7 @@ class _Cadastro1State extends State<Cadastro1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Openbanking"),
+        title: Image.asset("assets/logoopenminer2.png", height: 40,),
         centerTitle: true,
         backgroundColor: Color(0xFF2A5C5B),
         elevation: 0,
@@ -76,7 +76,6 @@ class _Cadastro1State extends State<Cadastro1> {
                     child: TextFormField(
                       controller: _controllerCpf,
                       keyboardType: TextInputType.text,
-                      obscureText: true,
                       style: TextStyle(
                         color: Colors.blueGrey,
                       ),
@@ -109,7 +108,6 @@ class _Cadastro1State extends State<Cadastro1> {
                     child: TextFormField(
                       controller: _controllerCep,
                       keyboardType: TextInputType.text,
-                      obscureText: true,
                       style: TextStyle(
                         color: Colors.blueGrey,
                       ),
@@ -267,7 +265,6 @@ class _Cadastro1State extends State<Cadastro1> {
                     child: TextFormField(
                       controller: _controllerOutroRecurso,
                       keyboardType: TextInputType.text,
-                      obscureText: true,
                       style: TextStyle(
                         color: Colors.blueGrey,
                       ),
@@ -496,7 +493,6 @@ class _Cadastro1State extends State<Cadastro1> {
                     child: TextFormField(
                       controller: _controllerCep,
                       keyboardType: TextInputType.text,
-                      obscureText: true,
                       style: TextStyle(
                         color: Colors.blueGrey,
                       ),
