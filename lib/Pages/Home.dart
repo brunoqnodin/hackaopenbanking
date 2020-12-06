@@ -4,6 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:openbanking/Contas.dart';
 import 'package:openbanking/Pages/Cadastro.dart';
+import 'package:openbanking/Pages/Extratos.dart';
 import 'package:openbanking/Pages/Propostas.dart';
 import 'package:openbanking/Pages/Solicita.dart';
 import 'package:openbanking/Pages/ui/clipper.dart';
@@ -51,8 +52,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     List<Widget> paginas = [
       Propostas(),
-      Cadastro(),
       Solicita(),
+      Extratos(),
       Contas()
     ];
     return Scaffold(
@@ -112,7 +113,7 @@ class _HomeState extends State<Home> {
               icon: Icon(Icons.insert_drive_file)
           ),
           BottomNavigationBarItem(
-              label: "Minha Empresa",
+              label: "Contas",
               icon: Icon(Icons.home)
           ),
           BottomNavigationBarItem(
@@ -120,7 +121,7 @@ class _HomeState extends State<Home> {
               icon: Icon(Icons.insert_chart)
           ),
           BottomNavigationBarItem(
-             label: "Meus Dados",
+             label: "Cadastrar conta",
               icon: Icon(Icons.account_circle)
           ),
         ],

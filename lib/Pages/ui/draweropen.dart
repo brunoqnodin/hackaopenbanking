@@ -70,7 +70,7 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 textColor: Colors.white70,
                 onPressed: (){},
                 icon: Icon(Icons.insert_drive_file),
-                label: Text("      Propostas"),
+                label: Text("      Perfil"),
               ),
             ),
             Padding(
@@ -84,9 +84,11 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.white70,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, "/cadastro");
+                },
                 icon: Icon(Icons.home),
-                label: Text("      Minha Empresa"),
+                label: Text("      Sincronizar conta(s)"),
               ),
             ),
             Padding(
@@ -102,7 +104,39 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 textColor: Colors.white70,
                 onPressed: (){},
                 icon: Icon(Icons.insert_chart),
-                label: Text("      Extratos Unificados"),
+                label: Text("      Extratos"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child:  Divider(
+                color: Colors.white70,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 5),
+              alignment: Alignment.centerLeft,
+              child: FlatButton.icon(
+                textColor: Colors.white70,
+                onPressed: (){
+                },
+                icon: Icon(Icons.account_circle),
+                label: Text("      Relatórios"),
+              ),
+            ),Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child:  Divider(
+                color: Colors.white70,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 5),
+              alignment: Alignment.centerLeft,
+              child: FlatButton.icon(
+                textColor: Colors.white70,
+                onPressed: (){},
+                icon: Icon(Icons.account_circle),
+                label: Text("      Contas e Cartões"),
               ),
             ),
             Padding(
@@ -118,7 +152,7 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 textColor: Colors.white70,
                 onPressed: (){},
                 icon: Icon(Icons.account_circle),
-                label: Text("      Meus Dados"),
+                label: Text("      Ajustes"),
               ),
             ),
             Padding(

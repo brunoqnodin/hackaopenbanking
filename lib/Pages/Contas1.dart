@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:openbanking/Pages/ui/clipper.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Contas1 extends StatefulWidget {
   @override
@@ -26,12 +27,23 @@ class _Contas1State extends State<Contas1> {
   String _agencia;
   String _conta;
   String _senha;
+  String _idUsuarioLogado;
+  String _nomeUsuarioLogado;
   TextEditingController _controllerBanco = TextEditingController();
   TextEditingController _controllerAgencia = TextEditingController();
   TextEditingController _controllerConta = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
 
+  _recuperarDadosUsuario()async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User usuarioLogado = await auth.currentUser;
+    _idUsuarioLogado = usuarioLogado.uid;
 
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    DocumentSnapshot snapshot = await db.collection("usuarios").doc(_idUsuarioLogado).get();
+
+    Map<String, dynamic> dados = snapshot.data();
+  }
 
   _inserir()async{
     _banco = _controllerBanco.text;
@@ -41,11 +53,12 @@ class _Contas1State extends State<Contas1> {
     FirebaseFirestore db = FirebaseFirestore.instance;
     DocumentReference reference = await db.collection("banco").add(
         {
-          "banco": "${_banco}",
+          "banco": "${_valorbanco}",
           "agencia": "${_agencia}",
           "conta": "${_conta}",
           "senha": "${_senha}",
           "timestamp": DateTime.now(),
+          "uidUsuario": _idUsuarioLogado
         }
     );
   }
@@ -117,7 +130,7 @@ class _Contas1State extends State<Contas1> {
                     padding: EdgeInsets.only(top: 40, left: 10, right: 10),
                     child: TextFormField(
                       controller: _controllerAgencia,
-                      keyboardType: TextInputType.text,
+                      keyboardType: TextInputType.number,
                       style: TextStyle(
                         color: Colors.blueGrey,
                       ),
