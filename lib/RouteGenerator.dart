@@ -9,6 +9,7 @@ import 'package:openbanking/Pages/Proposta1.dart';
 import 'package:openbanking/Pages/Propostas.dart';
 import 'package:openbanking/Pages/ResetPassword.dart';
 import 'package:openbanking/Pages/Home.dart';
+import 'package:openbanking/Pages/Splash.dart';
 
 class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
@@ -38,6 +39,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => Propostas());
       case "/home":
         return MaterialPageRoute(builder: (_) => Home());
+      case "/splash":
+        return MaterialPageRoute(builder: (_) => Splash());
       default: _erroRota();
     }
 

@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:openbanking/Pages/LoginPage.dart';
 import 'package:openbanking/RouteGenerator.dart';
+import 'package:openbanking/Pages/Splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,7 @@ Future<void> main() async {
   runApp(MaterialApp(
     theme: ThemeData(primaryColor: Color(0xFF2A5C5B)),
     debugShowCheckedModeBanner: false,
-    initialRoute: "/",
+    initialRoute: "/splash",
     onGenerateRoute: RouteGenerator.generateRoute,
     home: LoginPage(),
   ));
