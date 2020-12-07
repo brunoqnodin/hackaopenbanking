@@ -4,6 +4,8 @@
 
 O OpenMiner nasceu para empoderar as Micro e Pequenas Empresas com a centralização dos dados financeiros. Oferecemos uma gestão do fluxo de caixa através da Inteligência Artificial e consolidação de extratos pelo Open Banking com APIs de histórico financeiro das empresas. Como resultado, temos um Score personalizado através de dashboards e análise de dados financeiros positivos para ofertar melhores condições de crédito, com juros mais baixos.
 
+### Instalação
+
   - Extratos bancários consolidados através do Open Banking
   - Empoderamento sobre dados financeiros positivos
   - Score personalizado
