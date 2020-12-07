@@ -52,7 +52,7 @@ class _SolicitaState extends State<Solicita> {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 60, bottom: 20),
-            child: Text("Contas Cadastradas", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black54),),
+            child: Text("Contas Cadastradas", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black54),),
           ),
           StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance.collection("banco").snapshots(),
@@ -75,6 +75,7 @@ class _SolicitaState extends State<Solicita> {
                     shrinkWrap: true,
                     children: snapshot.data.docs.map((DocumentSnapshot document){
                       return Card(
+                        elevation: 7,
                         child: Column(
                           children: <Widget>[
                             Padding(

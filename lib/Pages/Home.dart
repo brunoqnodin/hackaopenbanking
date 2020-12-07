@@ -109,7 +109,7 @@ class _HomeState extends State<Home> {
         unselectedItemColor: Colors.black54,
         items: [
           BottomNavigationBarItem(
-              label: "Propostas",
+              label: "Crédito",
               icon: Icon(Icons.insert_drive_file)
           ),
           BottomNavigationBarItem(
